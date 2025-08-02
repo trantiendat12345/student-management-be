@@ -13,8 +13,8 @@ public class AccountRequest {
     @NotBlank(message = "Email không được để trống")
     private String email;
 
-    @NotBlank(message = "Mật khẩu không được để trống")
     @Size(min = 6, message = "Mật khẩu phải có từ 6 kí tự")
+    @NotBlank(message = "Mật khẩu không được để trống")
     private String password;
     
 }

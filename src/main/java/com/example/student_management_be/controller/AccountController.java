@@ -1,5 +1,7 @@
 package com.example.student_management_be.controller;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+@Validated
 @RestController
 @RequestMapping("app")
 public class AccountController {
@@ -25,7 +27,7 @@ public class AccountController {
     }
 
     @PostMapping("login")
-    public ResponseEntity<AccountResponse> login(@RequestBody AccountRequest request) {
+    public ResponseEntity<AccountResponse> login(@Valid @RequestBody AccountRequest request) {
 
         AccountResponse login = accountServiceInterface.login(request);
         
