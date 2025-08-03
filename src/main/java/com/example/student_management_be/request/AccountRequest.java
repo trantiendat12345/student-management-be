@@ -11,7 +11,7 @@ public class AccountRequest {
 
     @Email(message = "Email không đúng định dạng")
     @NotBlank(message = "Email không được để trống")
-    private String email;
+    private String username;
 
     @Size(min = 6, message = "Mật khẩu phải có từ 6 kí tự")
     @NotBlank(message = "Mật khẩu không được để trống")
