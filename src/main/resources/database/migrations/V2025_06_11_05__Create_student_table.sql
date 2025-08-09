@@ -11,6 +11,7 @@ CREATE TABLE student (
     image VARCHAR(255) DEFAULT NULL,
     academic_year VARCHAR(9) DEFAULT NULL,
     status ENUM('Enrolled', 'On leave', 'Graduated') NOT NULL DEFAULT 'Enrolled',
+    is_delete TINYINT(1) NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 

@@ -10,6 +10,7 @@ CREATE TABLE teacher (
     address VARCHAR(255) DEFAULT NULL,
     image VARCHAR(255) DEFAULT NULL,
     status ENUM('Active', 'On leave', 'Retired', 'Resigned') NOT NULL DEFAULT 'Active',
+    is_delete TINYINT(1) NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 

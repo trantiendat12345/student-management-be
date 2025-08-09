@@ -1,42 +1,42 @@
-package com.example.student_management_be.seeder;
+// package com.example.student_management_be.seeder;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.CommandLineRunner;
+// import org.springframework.stereotype.Component;
 
-import com.example.student_management_be.entity.Department;
-import com.example.student_management_be.repository.DepartmentRepository;
+// import com.example.student_management_be.entity.Department;
+// import com.example.student_management_be.repository.DepartmentRepository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+// import jakarta.persistence.EntityManager;
+// import jakarta.persistence.PersistenceContext;
 
-@Component
-public class DepartmentSeeder implements CommandLineRunner {
+// @Component
+// public class DepartmentSeeder implements CommandLineRunner {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+//     @PersistenceContext
+//     private EntityManager entityManager;
 
-    @Autowired
-    private DepartmentRepository departmentRepository;
+//     @Autowired
+//     private DepartmentRepository departmentRepository;
 
-    @Override
-    public void run(String... args) throws Exception {
+//     @Override
+//     public void run(String... args) throws Exception {
         
-        if (isTableEmpty()) {
+//         if (isTableEmpty()) {
             
-            System.out.println("Department!");
+//             System.out.println("Department!");
 
-            Department informartionTechnology = new Department();
-            informartionTechnology.setDepartmentName("INFORMATION TECHNOLOGY");
-            departmentRepository.save(informartionTechnology);
+//             Department informartionTechnology = new Department();
+//             informartionTechnology.setDepartmentName("INFORMATION TECHNOLOGY");
+//             departmentRepository.save(informartionTechnology);
 
-        }
+//         }
         
-    }
+//     }
 
-    private boolean isTableEmpty () {
-        Long count = (Long) entityManager.createQuery("SELECT COUNT(id) FROM Department").getSingleResult();
-        return count == 0; // bằng 0 thì true còn lại thì false.
-    }
+//     private boolean isTableEmpty () {
+//         Long count = (Long) entityManager.createQuery("SELECT COUNT(id) FROM Department").getSingleResult();
+//         return count == 0; // bằng 0 thì true còn lại thì false.
+//     }
     
-}
+// }

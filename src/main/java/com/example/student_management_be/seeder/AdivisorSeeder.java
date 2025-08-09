@@ -1,43 +1,43 @@
-package com.example.student_management_be.seeder;
+// package com.example.student_management_be.seeder;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.CommandLineRunner;
+// import org.springframework.stereotype.Component;
 
-import com.example.student_management_be.entity.Advisor;
-import com.example.student_management_be.repository.AdvisorRepository;
+// import com.example.student_management_be.entity.Advisor;
+// import com.example.student_management_be.repository.AdvisorRepository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+// import jakarta.persistence.EntityManager;
+// import jakarta.persistence.PersistenceContext;
 
-@Component
-public class AdivisorSeeder implements CommandLineRunner {
+// @Component
+// public class AdivisorSeeder implements CommandLineRunner {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+//     @PersistenceContext
+//     private EntityManager entityManager;
 
-    @Autowired
-    private AdvisorRepository advisorRepository;
+//     @Autowired
+//     private AdvisorRepository advisorRepository;
     
-    @Override
-    public void run(String... args) throws Exception {
+//     @Override
+//     public void run(String... args) throws Exception {
         
-        if (isTableEmpty()) {
+//         if (isTableEmpty()) {
 
-            System.out.println("Advisor!");
+//             System.out.println("Advisor!");
 
-            Advisor advisor = new Advisor();
-            advisor.setStudentId(1L);
-            advisor.setTeacherId(1L);
-            advisorRepository.save(advisor);
+//             Advisor advisor = new Advisor();
+//             advisor.setStudentId(1L);
+//             advisor.setTeacherId(1L);
+//             advisorRepository.save(advisor);
             
-        }
+//         }
 
-    }
+//     }
 
-    private boolean isTableEmpty () {
-        Long count = (Long) entityManager.createQuery("SELECT COUNT(id) FROM Advisor").getSingleResult();
-        return count == 0; // bằng 0 thì true còn lại thì false.
-    }
+//     private boolean isTableEmpty () {
+//         Long count = (Long) entityManager.createQuery("SELECT COUNT(id) FROM Advisor").getSingleResult();
+//         return count == 0; // bằng 0 thì true còn lại thì false.
+//     }
 
-}
+// }

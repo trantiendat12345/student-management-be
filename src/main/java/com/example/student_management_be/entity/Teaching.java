@@ -2,6 +2,8 @@ package com.example.student_management_be.entity;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.SQLRestriction;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,14 +13,17 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "teaching")
+@SQLRestriction("is_delete = false")
 public class Teaching {
 
     @Id
@@ -37,6 +42,9 @@ public class Teaching {
 
     @Column(name = "academic_year")
     private String academicYear;
+
+    @Column(name = "is_delete")
+    private boolean isDelete;
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

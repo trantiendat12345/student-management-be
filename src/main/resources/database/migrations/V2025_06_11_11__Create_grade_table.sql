@@ -5,6 +5,7 @@ CREATE TABLE grade (
     midterm_score FLOAT,
     final_score FLOAT,
     average_score FLOAT,
+    is_delete TINYINT(1) NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
